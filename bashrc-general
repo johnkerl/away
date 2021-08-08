@@ -1,0 +1,37 @@
+# ================================================================
+# Very short set of essential aliases without which I feel lost.
+#
+# John Kerl 2013-10-04
+# ================================================================
+
+alias cls='clear'
+alias h='history 10'
+alias j='jobs -l'
+alias ll='ls -l'
+alias lll='ls -lL'
+alias ls='ls -G --color=auto'
+alias lss='ls -Slr'
+alias lt='ls -lrt'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias v='vim'
+alias v-='vim -'
+
+# Minimal prompt
+#export PS1="$USER@$(hostname)$ "
+export PS1="$USER@$(hostname)[\W]$ "
+# This one has color
+# 1 is for bold
+# 30 black
+# 31 red
+# 32 green
+# 33 yellow
+# 34 blue
+# 35 magenta
+# 36 cyan
+# 37 white
+# So 1;33 is bold yellow
+# The \[..\] are important in shell prompts so that bash doesn't count the
+# length of the ANSI escape sequences in the line length, so you can
+# successfully edit long/wrapped lines.
+export PS1="[\e[1;33m\]$USER@$(hostname)[\W]$[\e[0m\] "

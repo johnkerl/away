@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# ================================================================
+# This is the file which will be sourced on the away host to set up aliases.
+# You must
+#
+#   . /path/to/this/file
+#
+# (note the '.') in order to have effect on the calling shell's PATH variable.
+#
+# ================================================================
+# John Kerl 2021-08-08
+# ================================================================
+
+ourdir=$HOME/away
+
+export PATH=$ourdir/bin-general:$PATH
+export PATH=$ourdir/bin-project:$PATH
+alias vim='vim -u $ourdir/vimrc'
+. $ourdir/bashrc-general
+. $ourdir/bashrc-project
