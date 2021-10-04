@@ -16,6 +16,8 @@ ourdir=$HOME/away
 
 export PATH=$ourdir/bin-general:$PATH
 export PATH=$ourdir/bin-project:$PATH
+export PATH=.:$PATH
+bind '"\C-w": backward-kill-word'
 alias vim='vim -u $ourdir/vimrc'
 . $ourdir/bashrc-general
 . $ourdir/bashrc-project
