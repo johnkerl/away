@@ -21,3 +21,4 @@ bind '"\C-w": backward-kill-word'
 alias vim='vim -u $ourdir/vimrc'
 . $ourdir/bashrc-general
 . $ourdir/bashrc-project
+. $ourdir/project-aliases
