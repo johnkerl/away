@@ -23,6 +23,8 @@ syntax on " Enable language-specific syntax highlighting.
 "Leader for two-key sequences
 map , \
 
+map \e :set hlsearch
+map \E :set nohlsearch
 map \i :set ic
 map \I :set noic
 map \a :set ai

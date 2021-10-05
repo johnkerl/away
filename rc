@@ -17,8 +17,11 @@ ourdir=$HOME/away
 export PATH=$ourdir/bin-general:$PATH
 export PATH=$ourdir/bin-project:$PATH
 export PATH=.:$PATH
-bind '"\C-w": backward-kill-word'
-alias vim='vim -u $ourdir/vimrc'
+ln -f -s /usr/local/bin/python3 python
+
 . $ourdir/bashrc-general
 . $ourdir/bashrc-project
 . $ourdir/project-aliases
+
+bind '"\C-w": backward-kill-word'
+alias vim='vim -u $ourdir/vimrc'

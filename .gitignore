@@ -1,0 +1,4 @@
+bin-general/*
+bin-project/*
+.sw?
+.*.sw?
