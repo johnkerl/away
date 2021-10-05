@@ -21,7 +21,9 @@ ln -f -s /usr/local/bin/python3 python
 
 . $ourdir/bashrc-general
 . $ourdir/bashrc-project
-. $ourdir/project-aliases
+if [ -f $ourdir/project-aliases ]; then
+  . $ourdir/project-aliases
+fi
 
 bind '"\C-w": backward-kill-word'
 alias vim='vim -u $ourdir/vimrc'
