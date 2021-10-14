@@ -17,6 +17,16 @@ alias egrep='egrep --color=auto'
 alias v='vim'
 alias v-='vim -'
 
+alias  gd='git diff'
+alias  gs='git status'
+alias  ga='git add'
+alias  gl='git log -n 5'
+alias gla='git log --graph --all'
+alias  sb='git show-current-branch'
+alias sbs='git show-branches'
+
+alias R='R --no-save'
+
 # Minimal prompt
 #export PS1="$USER@$(hostname)$ "
 export PS1="$USER@$(hostname)[\W]$ "
