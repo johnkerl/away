@@ -23,30 +23,34 @@ syntax on " Enable language-specific syntax highlighting.
 "Leader for two-key sequences
 map , \
 
-map \e :set hlsearch
-map \E :set nohlsearch
-map \i :set ic
-map \I :set noic
-map \a :set ai
-map \A :set noai
+map \e :set hlsearch<CR>
+map \E :set nohlsearch<CR>
+map \i :set ic<CR>
+map \I :set noic<CR>
+map \a :set ai<CR>
+map \A :set noai<CR>
 
-map \n :se nu
-map \N :se nonu
-map \l :se list
-map \L :se nolist
+map \n :se nu<CR>
+map \N :se nonu<CR>
+map \l :se list<CR>
+map \L :se nolist<CR>
 
-map \2 :se ts=2
-map \3 :se ts=3
-map \4 :se ts=4
-map \8 :se ts=8
+map \2 :se ts=2<CR>
+map \3 :se ts=3<CR>
+map \4 :se ts=4<CR>
+map \8 :se ts=8<CR>
+
+" Set mark, format, return to mark. Without the mark, the cursor would be at
+" the top of the file after the %!...
+map \g mz:%!gofmt<CR>'z
 
 map e 
 
 map ; :
 " Show current line number
-map - :.=
+map - :.=<CR>
 " Show last line number
-map _ :$=
+map _ :$=<CR>
 " Insert a space & keep the cursor position still
 map  i 
 " Indent the current line by a tab
@@ -55,7 +59,7 @@ map  I	
 map  0x
 
 " Next file
-map  :n
+map  :n<CR>
 " Reflow the current paragraph
 map  gqip}}{j
 " Reflow the current line and the one below.  Nice with auto-repeat.
@@ -63,7 +67,7 @@ map  gqj
 " Replace current character with space and move right.  Nice with auto-repeat.
 map  r l
 " Move to next file, with save.
-map  :w:n
+map  :w<CR>:n<CR>
 
 " ================================================================
 " Language-specific separators.  Uppercase is equal signs; lowercase is dashes.

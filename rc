@@ -24,6 +24,14 @@ ln -f -s /usr/local/bin/python3 python
 if [ -f $ourdir/project-aliases ]; then
   . $ourdir/project-aliases
 fi
+cdt=$HOME/git/TileDB-Inc/cloud-dev-temp
+if [ -f $cdt/vars-site-shared ]; then
+  . $cdt/vars-site-shared
+fi
+if [ -d $cdt ]; then
+  export PATH=$cdt:$PATH
+  export PATH=$cdt/scripts:$PATH
+fi
 
 bind '"\C-w": backward-kill-word'
 alias vim='vim -u $ourdir/vimrc'
