@@ -6,4 +6,4 @@ The `fundam/accel` directory contains optional C/Go implementations of a few of 
 
 ----------------------------------------------------------------
 
-John Kerl 2012-07-19
+John Kerl 2012-07-19 

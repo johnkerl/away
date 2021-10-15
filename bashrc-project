@@ -1,2 +1,1 @@
-# project-specific things can go here
-# Add more aliases, etc. here
+# Intended to be sourced by bashrc eithero on laptop/dev host, or away/EC2 host

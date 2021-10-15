@@ -40,11 +40,13 @@ map \3 :se ts=3<CR>
 map \4 :se ts=4<CR>
 map \8 :se ts=8<CR>
 
+map <C-h> :.!bash<CR>j
+
 " Set mark, format, return to mark. Without the mark, the cursor would be at
 " the top of the file after the %!...
 map \g mz:%!gofmt<CR>'z
 
-map e 
+map e <C-e>
 
 map ; :
 " Show current line number
@@ -52,22 +54,22 @@ map - :.=<CR>
 " Show last line number
 map _ :$=<CR>
 " Insert a space & keep the cursor position still
-map  i 
+map <C-k> i <ESC>
 " Indent the current line by a tab
-map  I	
+map <C-a> I	<ESC>
 " Unindent the current line by its leading character (e.g. a tab)
-map  0x
+map <C-u> 0x
 
 " Next file
-map  :n<CR>
+map <C-n> :n<CR>
 " Reflow the current paragraph
-map  gqip}}{j
+map <C-p> gqip}}{j
 " Reflow the current line and the one below.  Nice with auto-repeat.
-map  gqj
+map <C-x> gqj
 " Replace current character with space and move right.  Nice with auto-repeat.
-map  r l
+map <C-d> r l
 " Move to next file, with save.
-map  :w<CR>:n<CR>
+map <C-o> :w<CR>:n<CR>
 
 " ================================================================
 " Language-specific separators.  Uppercase is equal signs; lowercase is dashes.
@@ -105,3 +107,61 @@ map \f Oi 64A-
 map \F Oi 64A=
 map \j O64A-
 map \J O64A=
+
+" ================================================================
+
+au BufNewFile,BufRead Makefile* set ts=8
+au BufNewFile,BufRead Makefile* set noexpandtab
+au BufNewFile,BufRead Makefile* map <C-a> I<TAB><ESC>
+au BufNewFile,BufRead Makefile* map <C-u> 0x
+
+au BufNewFile,BufRead configure.ac set ts=8
+au BufNewFile,BufRead configure.ac set noexpandtab
+au BufNewFile,BufRead configure.ac map <C-a> I<TAB><ESC>
+au BufNewFile,BufRead configure.ac map <C-u> 0x
+
+au BufNewFile,BufRead *.[ch] set ts=4
+au BufNewFile,BufRead *.[ch] set noexpandtab
+au BufNewFile,BufRead *.[ch] map <C-a> I<TAB><ESC>
+au BufNewFile,BufRead *.[ch] map <C-u> 0x
+
+au BufNewFile,BufRead *.[ly] set ts=4
+au BufNewFile,BufRead *.[ly] set noexpandtab
+au BufNewFile,BufRead *.[ly] map <C-a> I<TAB><ESC>
+au BufNewFile,BufRead *.[ly] map <C-u> 0x
+
+au BufNewFile,BufRead *.[d] set ts=4
+au BufNewFile,BufRead *.[d] set noexpandtab
+au BufNewFile,BufRead *.[d] map <C-a> I<TAB><ESC>
+au BufNewFile,BufRead *.[d] map <C-u> 0x
+
+au BufNewFile,BufRead *.go set ts=4
+au BufNewFile,BufRead *.go set noexpandtab
+au BufNewFile,BufRead *.go map <C-a> I<TAB><ESC>
+au BufNewFile,BufRead *.go map <C-u> 0x
+
+au BufNewFile,BufRead *.py set ts=4
+au BufNewFile,BufRead *.py set expandtab
+au BufNewFile,BufRead *.py map <C-a> I    <ESC>
+au BufNewFile,BufRead *.py map <C-u> 0xxxx
+
+au BufNewFile,BufRead py* set ts=4
+au BufNewFile,BufRead py* set expandtab
+au BufNewFile,BufRead py* map <C-a> I    <ESC>
+au BufNewFile,BufRead py* map <C-u> 0xxxx
+
+au BufNewFile,BufRead pgr set ts=4
+au BufNewFile,BufRead pgr set expandtab
+au BufNewFile,BufRead pgr map <C-a> I    <ESC>
+au BufNewFile,BufRead pgr map <C-u> 0xxxx
+
+:autocmd FileType python set ts=4
+:autocmd FileType python set expandtab
+:autocmd FileType python map <C-a> I    <ESC>
+:autocmd FileType python map <C-u> 0xxxx
+
+au BufNewFile,BufRead *.[rR] set ts=2
+au BufNewFile,BufRead *.[rR] set expandtab
+au BufNewFile,BufRead *.[rR] map <C-a> I  <ESC>
+au BufNewFile,BufRead *.[rR] map <C-u> 0xx
+
